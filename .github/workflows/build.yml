@@ -19,6 +19,11 @@ jobs:
           python-version: "3.10"
 
       - name: Install Android Build Dependencies
+       run: |
+          yes | sdkmanager --licenses
+          sdkmanager "platform-tools"
+          sdkmanager "platforms;android-33"
+          sdkmanager "build-tools;33.0.2"
         run: |
           sudo apt update
           sudo apt install -y \
