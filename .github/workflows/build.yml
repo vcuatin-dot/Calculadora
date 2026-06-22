@@ -51,6 +51,7 @@ jobs:
         run: |
           buildozer android debug 2>&1 | tee build.log
         continue-on-error: false
+        
       - name: Show generated files
         run: |
           find . -name "*.apk"
